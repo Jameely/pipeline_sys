@@ -175,6 +175,8 @@ void *firstTaskFunc(void *argument)
     printf("%u\n%s\n", *number_ptr ,is_prime(*number_ptr) ? "true" : "false");
 
     enqueue(getQueue(AO2), number_ptr);
+
+    return NULL;
 }
 
 void *secondTaskFunc(void *argument)
@@ -186,6 +188,9 @@ void *secondTaskFunc(void *argument)
     printf("%u\n%s\n", *number, is_prime(*number) ? "true" : "false");
 
     enqueue(getQueue(AO3), number);
+
+    return NULL;
+
 }
 
 void *thirdTaskFunc(void *argument)
@@ -197,6 +202,9 @@ void *thirdTaskFunc(void *argument)
     printf("%u\n%s\n", *number, is_prime(*number) ? "true" : "false");
 
     enqueue(getQueue(AO4), number);
+
+    return NULL;
+
 }
 
 
@@ -210,6 +218,9 @@ void *fourthTaskFunc(void *argument)
     printf("%u\n", *number);
 
     free(number);
+
+    return NULL;
+
 }
 
 void initializeActiveObjects(activeObject **ao1, activeObject **ao2, activeObject **ao3, activeObject **ao4)
